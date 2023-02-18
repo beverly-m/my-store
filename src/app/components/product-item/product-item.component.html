@@ -1,0 +1,7 @@
+<div>
+    <img [src]=product.images[0]/>
+    <p>{{ product.title }}</p>
+    <p>{{ product.price}}</p>
+    <button (click)="addToCart(product)">Add to Cart</button>
+    <button [routerLink]="['/products', product.id]">View More</button>
+</div>
