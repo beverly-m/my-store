@@ -6,7 +6,7 @@ import { Product } from '../models/product.model';
 })
 export class CartService {
 
-  cartItems: Product[] = []
+  cartItems: Product[] = [];
 
   constructor() { }
 
@@ -22,4 +22,5 @@ export class CartService {
     this.cartItems = [];
     return this.cartItems;
   }
+
 }

@@ -4,3 +4,13 @@
     <p>{{cartItem.title}}</p>
     <p>{{cartItem.price}}</p>
 </div>
+
+<p>Total:</p>
+<p>{{ totalCost }}</p>
+
+<form #form="ngForm" (ngSubmit)="onSubmit()">
+    <input type="text" name="name" [(ngModel)]="name" required minlength="6" placeholder="John Doe">
+    <input type="text" name="address" required minlength="6" [(ngModel)]="address" placeholder="23 Example St">
+    <input type="text" name="cardNo" required maxlength="16" minlength="16" [(ngModel)]="cardNo" placeholder="0000 0000 0000 0000">
+    <button type="submit" [disabled]="form.invalid">Checkout</button>
+</form>
