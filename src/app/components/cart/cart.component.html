@@ -1,16 +1,24 @@
 <h1>Cart</h1>
-<div *ngFor="let cartItem of cartItems">
-    <img [src]=cartItem.images[0] />
-    <p>{{cartItem.title}}</p>
-    <p>{{cartItem.price}}</p>
-</div>
+<div *ngIf="cartItems.length">
+    <div *ngFor="let cartItem of cartItems">
+        <img [src]=cartItem.images[0] />
+        <p>{{cartItem.title}}</p>
+        <p>{{cartItem.price}}</p>
+        <button (click)="removeProduct(cartItem)">Remove</button>
+    </div>
 
-<p>Total:</p>
-<p>{{ totalCost }}</p>
+    <p>Total:</p>
+    <p>{{ totalCost }}</p>
+</div>
 
 <form #form="ngForm" (ngSubmit)="onSubmit()">
     <input type="text" name="name" [(ngModel)]="name" required minlength="6" placeholder="John Doe">
     <input type="text" name="address" required minlength="6" [(ngModel)]="address" placeholder="23 Example St">
-    <input type="text" name="cardNo" required maxlength="16" minlength="16" [(ngModel)]="cardNo" placeholder="0000 0000 0000 0000">
+    <input type="text" name="cardNo" required maxlength="16" minlength="16"  [(ngModel)]="cardNo" (ngModelChange)="onChange($event)" placeholder="0000 0000 0000 0000">
+    <div *ngIf="invalid">
+    Card number should be 16 characters
+    </div>
     <button type="submit" [disabled]="form.invalid">Checkout</button>
 </form>
+
+

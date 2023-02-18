@@ -16,6 +16,8 @@ export class CartComponent {
   cardNo: string = '';
   totalCost: number = 0;
 
+  invalid: boolean = false;
+
   constructor(private cartService: CartService, private router: Router) {}
 
   ngOnInit() {
@@ -31,5 +33,14 @@ export class CartComponent {
     this.cardNo = '';
     // redirect to success page
     this.router.navigate(['/confirmation'])
+  }
+
+  removeProduct(product: Product) {
+    this.cartItems = this.cartService.removeCartItem(product);
+    alert(`${product.title} removed from cart`);
+  }
+
+  onChange(event: any): void {
+    this.invalid = this.cardNo.length < 16
   }
 }

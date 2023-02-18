@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./confirm-pay.component.css']
 })
 export class ConfirmPayComponent {
-
+  
 }
