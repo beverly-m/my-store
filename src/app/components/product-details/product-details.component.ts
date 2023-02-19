@@ -19,19 +19,20 @@ export class ProductDetailsComponent {
       title: '',
       images: [],
       price: 0,
-      description: ''
+      description: '',
+      quantity: 1
     }
   }
 
   ngOnInit() {
     const routeParameters = this.route.snapshot.paramMap;
-    console.log(routeParameters);
     const productId = Number(routeParameters.get('productId'))
-    console.log(productId);
 
     this.productService.getProducts().subscribe(res => {
       this.products = res.products;
-      console.log(this.products);
+      for (let index = 0; index < this.products.length; index++) {
+        this.products[index].quantity = 1;
+      }
       this.product = (this.products.find(product => product.id === productId) as unknown) as Product;
     })
   }

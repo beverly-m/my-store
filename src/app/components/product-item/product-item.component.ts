@@ -20,7 +20,8 @@ export class ProductItemComponent {
       title: '',
       images: [],
       price: 0,
-      description: ''
+      description: '',
+      quantity: 1,
     }
   }
 
@@ -28,6 +29,9 @@ export class ProductItemComponent {
     
     this.productService.getProducts().subscribe(res => {
       this.products = res.products;
+      for (let index = 0; index < this.products.length; index++) {
+        this.products[index].quantity = 1;
+      }
     })
 
     // this.product = (this.products.find(product => product.id === productId) as unknown) as Product

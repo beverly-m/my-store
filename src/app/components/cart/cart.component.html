@@ -3,18 +3,21 @@
     <div *ngFor="let cartItem of cartItems">
         <img [src]=cartItem.images[0] />
         <p>{{cartItem.title}}</p>
-        <p>{{cartItem.price}}</p>
+        <p>{{cartItem.price | currency }}</p>
+        <form >
+            <input type="number" name="quantity" required min="1" [(ngModel)]="cartItem.quantity" (ngModelChange)="onChange($event)">
+        </form>
         <button (click)="removeProduct(cartItem)">Remove</button>
     </div>
 
     <p>Total:</p>
-    <p>{{ totalCost }}</p>
+    <p>{{ totalCost | currency }}</p>
 </div>
 
 <form #form="ngForm" (ngSubmit)="onSubmit()">
     <input type="text" name="name" [(ngModel)]="name" required minlength="6" placeholder="John Doe">
     <input type="text" name="address" required minlength="6" [(ngModel)]="address" placeholder="23 Example St">
-    <input type="text" name="cardNo" required maxlength="16" minlength="16"  [(ngModel)]="cardNo" (ngModelChange)="onChange($event)" placeholder="0000 0000 0000 0000">
+    <input type="text" name="cardNo" required maxlength="16" minlength="16"  [(ngModel)]="cardNo" placeholder="0000 0000 0000 0000">
     <div *ngIf="invalid">
     Card number should be 16 characters
     </div>

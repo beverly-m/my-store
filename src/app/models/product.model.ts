@@ -4,6 +4,7 @@ export class Product {
     images: string[];
     price: number;
     description: string; 
+    quantity: number
 
     constructor() {
         this.id = 1;
@@ -11,5 +12,6 @@ export class Product {
         this.images = [];
         this.price = 0;
         this.description = '';
+        this.quantity = 1;
     }
 }

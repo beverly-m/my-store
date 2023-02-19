@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { OrderDetails } from 'src/app/models/orderDetails';
+import { OrderDetailsService } from 'src/app/services/order-details.service';
 
 @Component({
   selector: 'app-confirm-pay',
@@ -6,5 +8,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./confirm-pay.component.css']
 })
 export class ConfirmPayComponent {
-  
+  orderDetails: OrderDetails = {
+    name: '',
+    total: 0
+  }
+
+  constructor(private orderDetailsService: OrderDetailsService) {}
+
+  ngOnInit() {
+    this.orderDetails = this.orderDetailsService.getOrderDetails();
+  }
 }
