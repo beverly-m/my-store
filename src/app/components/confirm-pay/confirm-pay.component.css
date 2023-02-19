@@ -1,0 +1,47 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: auto;
+    column-gap: 24px;
+    padding: 0px 72px;
+    width: 80%;
+    text-align: center;
+}
+
+.page-title {
+    font-size: 40px;
+    text-align: center;
+    margin-top: 32px;
+    margin-bottom: 12px;
+    color: #45454d;
+}
+
+.title, .title > b {
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+    font-size: 18px;
+    margin-bottom: 16px;
+}
+
+button {
+    width: max-content;
+    padding: 8px 24px;
+    border-radius: 8px;
+    border-width: 0px;
+    transition-duration: 0.8s;
+    margin: 24px auto;
+}
+
+.primary-btn {
+    background-color: #376c6d;
+    font-weight: 400;
+    font-size: 14px;
+    color: white;
+    cursor: pointer;
+    transition-duration: 0.8s;
+}
+
+.primary-btn:hover {
+    background-color: #6cc2c4;
+}

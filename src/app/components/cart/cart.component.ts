@@ -51,6 +51,11 @@ export class CartComponent {
   removeProduct(product: Product) {
     this.cartItems = this.cartService.removeCartItem(product);
     alert(`${product.title} removed from cart`);
+    
+    this.totalCost = 0
+    for (let index = 0; index < this.cartItems.length; index++) {
+      this.totalCost = this.totalCost + (this.cartItems[index].price * this.cartItems[index].quantity);
+    }
   }
 
   onChange(event: any): void {

@@ -1,5 +1,7 @@
-<h3>Success!</h3>
-<p>Thank you, {{ orderDetails.name }}!</p>
-<p>Your {{ orderDetails.total | currency }} order is confirmed!</p>
-<p>Please allow 1-3 business day(s) for shipping.</p>
-<button routerLink="/">Back to Product List</button>
+<div class="container">
+<h3 class="page-title">Success!</h3>
+<p class="title">Thank you, <b>{{ orderDetails.name }}!</b></p>
+<p>Your <b>{{ orderDetails.total | currency }}</b> order is confirmed!</p>
+<p>Please allow <b>1-3 business day(s)</b> for shipping.</p>
+<button class="primary-btn" routerLink="/">Back to Product List</button> 
+</div>

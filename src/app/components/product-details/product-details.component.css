@@ -10,6 +10,7 @@
     max-width: 720px;
     column-gap: 24px;
     margin: auto;
+    align-items: center;
 }
 
 .details-container {
@@ -25,8 +26,6 @@
 }
 
 .img--container {
-    width: 25%;
-    height: auto;
     overflow: hidden;
     border-radius: 16px;
     min-width: 170px;
