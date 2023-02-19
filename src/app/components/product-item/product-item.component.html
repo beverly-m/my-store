@@ -1,10 +1,15 @@
-<div>
+<div class="container">
+    <div class="img--container">
     <img [src]=product.images[0]/>
-    <p>{{ product.title }}</p>
-    <p>{{ product.price | currency}}</p>
-    <form >
+    </div>
+    <p class="title">{{ product.title }}</p>
+    <p class="price">{{ product.price | currency}}</p>
+    <form>
+        <label for="quantity">Select quantity:</label>
         <input type="number" name="quantity" required min="1" [(ngModel)]="product.quantity">
     </form>
-    <button (click)="addToCart(product)">Add to Cart</button>
-    <button [routerLink]="['/products', product.id]">View More</button>
+    <div class="button--container">
+    <button (click)="addToCart(product)" class="primary-btn">Add to Cart</button>
+    <button [routerLink]="['/products', product.id]" class="secondary-btn">View More</button>
+    </div>
 </div>

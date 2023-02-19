@@ -1,0 +1,14 @@
+* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #16161d;
+    padding: 0px;
+    margin: 0px;
+    font-size: 14px;
+}
+
+.nav--container {
+    background-color: #548687;
+    padding: 24px;
+    display: flex;
+    justify-content: space-between;
+}
