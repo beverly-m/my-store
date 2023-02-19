@@ -8,7 +8,35 @@
 
 .nav--container {
     background-color: #548687;
-    padding: 24px;
+    padding: 24px 72px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+a {
+    color: white;
+    font-size: 24px;
+    transition-duration: 0.8s;
+}
+
+a:hover {
+    color: #6cc2c4;
+}
+
+button {
+    padding: 8px 24px;
+    border-radius: 8px;
+    border-width: 0px;
+    background-color: #548687 ;
+    border-color: white;
+    border-width: 1px;
+    color: white;
+    cursor: pointer;
+    transition-duration: 0.8s;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #6cc2c4;
 }

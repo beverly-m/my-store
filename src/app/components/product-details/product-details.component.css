@@ -1,0 +1,87 @@
+.container {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #ddd;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: row;
+    padding: 12px;
+    width: 70%;
+    max-width: 720px;
+    column-gap: 24px;
+    margin: auto;
+}
+
+.details-container {
+    margin: 0;
+}
+
+.page-title {
+    font-size: 40px;
+    text-align: center;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    color: #45454d;
+}
+
+.img--container {
+    width: 25%;
+    height: auto;
+    overflow: hidden;
+    border-radius: 16px;
+    min-width: 170px;
+}
+
+img {
+    border-radius: 16px;
+    width: 100%;
+}
+
+.title {
+    font-weight: 700;
+    font-size: 24px;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+.price {
+    color: #555;
+    padding-bottom: 0.5em;
+}
+
+.description {
+    padding-bottom: 0.5em;
+}
+
+input {
+    border-width: 1px;
+    border-radius: 8px;
+    padding: 8px;
+    width: 48px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5em;
+}
+
+button {
+    margin-top: 24px;
+    padding: 8px 24px;
+    border-radius: 8px;
+    border-width: 0px;
+    transition-duration: 0.8s;
+}
+
+.primary-btn {
+    background-color: #376c6d;
+    font-weight: 400;
+    font-size: 14px;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #6cc2c4;
+}

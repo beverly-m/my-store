@@ -2,14 +2,14 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: #16161d;
     padding: 0px;
-    margin: 0px; 
+    margin: 0px;
     font-size: 14px;
 }
 
 .container {
     border-style: solid;
     border-width: 1px;
-    border-color: #999;
+    border-color: #ddd;
     border-radius: 16px;
     display: flex;
     flex-direction: column;
@@ -54,6 +54,7 @@ button {
     padding: 8px 24px;
     border-radius: 8px;
     border-width: 0px;
+    transition-duration: 0.8s;
 }
 
 .button--container {
@@ -79,4 +80,8 @@ button {
     font-size: 14px;
     color: #16161d;
     cursor: pointer;
+}
+
+button:hover {
+    background-color: #6cc2c4;
 }

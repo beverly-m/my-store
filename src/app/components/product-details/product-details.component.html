@@ -1,11 +1,16 @@
-<h1>Product Details</h1>
-<div *ngIf="product">
-    <img [src]=product.images[0]/>
-    <p>{{ product.title }}</p>
-    <p>{{ product.description }}</p>
-    <p>{{ product.price | currency }}</p>
-    <form >
+<h1 class="page-title">Product Details</h1>
+<div class="container" *ngIf="product">
+    <div class="img--container">
+        <img [src]=product.images[0]/>
+    </div>
+    <div class="details-container">
+    <p class="title">{{ product.title }}</p>
+    <p class="description">{{ product.description }}</p>
+    <p class="price">{{ product.price | currency }}</p>
+    <form>
+        <label for="quantity">Select quantity:</label>
         <input type="number" name="quantity" required min="1" [(ngModel)]="product.quantity">
     </form>
-    <button (click)="addToCart(product)">Add to Cart</button>
-</div>
+    <button class="primary-btn" (click)="addToCart(product)">Add to Cart</button>
+    </div>
+</div> 

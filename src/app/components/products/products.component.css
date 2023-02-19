@@ -9,8 +9,9 @@
 .page-title {
     font-size: 40px;
     text-align: center;
-    margin-top: 12px;
+    margin-top: 32px;
     margin-bottom: 12px;
+    color: #45454d;
 }
 
 .products--container {
