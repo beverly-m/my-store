@@ -11,7 +11,7 @@ import { ProductService } from 'src/app/services/product.service';
 export class ProductItemComponent {
   @Input() product: Product;
   @Output() addProduct: EventEmitter<Product> = new EventEmitter;
-
+ 
   products: Product[] = [];
 
   constructor(private cartService: CartService, private productService: ProductService) {
@@ -34,11 +34,11 @@ export class ProductItemComponent {
       }
     })
 
-    // this.product = (this.products.find(product => product.id === productId) as unknown) as Product
   }
 
   addToCart(product: Product) {
     this.cartService.addToCart(product);
     alert(`${this.product.title} added to cart!`)
+    this.product.quantity = 1;
   }
 }

@@ -31,7 +31,7 @@ export class ProductDetailsComponent {
     this.productService.getProducts().subscribe(res => {
       this.products = res.products;
       for (let index = 0; index < this.products.length; index++) {
-        this.products[index].quantity = 1;
+        this.products[index].quantity = 1; 
       }
       this.product = (this.products.find(product => product.id === productId) as unknown) as Product;
     })
@@ -39,6 +39,6 @@ export class ProductDetailsComponent {
 
   addToCart(product: Product) {
     this.cartService.addToCart(product);
-    alert(`${this.product.title} added to cart!`)
+    alert(`${this.product.title} added to cart!`);
   }
 }

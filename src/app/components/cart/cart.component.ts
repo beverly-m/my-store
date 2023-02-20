@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { OrderDetails } from 'src/app/models/orderDetails';
+import { OrderDetails } from 'src/app/models/orderDetails.model';
 import { Product } from 'src/app/models/product.model';
 import { CartService } from 'src/app/services/cart.service';
 import { OrderDetailsService } from 'src/app/services/order-details.service';
@@ -21,6 +21,7 @@ export class CartComponent {
     name: '',
     total: 0
   };
+  validCard: boolean = true;
 
   invalid: boolean = false;
 
@@ -63,5 +64,29 @@ export class CartComponent {
     for (let index = 0; index < this.cartItems.length; index++) {
       this.totalCost = this.totalCost + (this.cartItems[index].price * this.cartItems[index].quantity);
     }
+  }
+
+  onUpdate(event: any): void {
+    console.log(typeof(this.cardNo))
+    // if (/\d/.test(this.cardNo)) {
+    if (!isNaN(parseInt(this.cardNo)) && isFinite(parseInt(this.cardNo)) && ((parseFloat(this.cardNo) - parseInt(this.cardNo)) === 0)) {
+      this.validCard = true;
+      console.log(`is integer ${this.validCard}`);
+
+      if (parseInt(this.cardNo) < 0) {
+        this.validCard = false;
+        console.log(`is negative ${this.validCard}`);
+      }
+      else {
+        this.validCard = true;
+        console.log(`is positive ${this.validCard}`);
+      }
+    }
+    else {
+      this.validCard = false;
+      console.log(`is integer ${this.validCard}`);
+    }
+
+    console.log(this.validCard);
   }
 }

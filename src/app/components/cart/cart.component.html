@@ -2,7 +2,7 @@
 <div class="container">
     <div *ngIf="cartItems.length" class="products">
         <div *ngFor="let cartItem of cartItems" class="product--container">
-            <div class="img--container">
+            <div  class="img--container">
                 <img [src]=cartItem.images[0] />
             </div>
             <div class="description-container">
@@ -29,7 +29,10 @@
             </div>
             <div class="input-field-container">
             <label for="cardNo">Card number:</label>
-            <input class="input-field" type="text" name="cardNo" required maxlength="16" minlength="16"  [(ngModel)]="cardNo" placeholder="0000000000000000">
+            <input class="input-field" type="text" name="cardNo" required maxlength="16" minlength="16"  [(ngModel)]="cardNo" (ngModelChange)="onUpdate($event)" placeholder="0000000000000000">
+            <div [hidden]="validCard" class="error"> 
+                Card number should be digits only
+            </div>
             </div>
             <button type="submit" class="primary-btn" [disabled]="form.invalid">Checkout</button>
         </form>
